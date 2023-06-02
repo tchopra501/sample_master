@@ -1,0 +1,16 @@
+{
+	"name": "ds_fileshare",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_fileshare",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "FileShare",
+		"typeProperties": {
+			"fileName": "adopt.txt",
+			"folderPath": "new"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

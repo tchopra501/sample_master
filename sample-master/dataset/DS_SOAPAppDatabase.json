@@ -1,0 +1,13 @@
+{
+	"name": "DS_SOAPAppDatabase",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SOAPAppDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

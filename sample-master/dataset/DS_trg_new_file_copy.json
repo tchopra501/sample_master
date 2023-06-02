@@ -1,0 +1,27 @@
+{
+	"name": "DS_trg_new_file_copy",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_trg_new_file_copy",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureDataLakeStoreFile",
+		"typeProperties": {
+			"format": {
+				"type": "TextFormat",
+				"columnDelimiter": ",",
+				"treatEmptyAsNull": true
+			},
+			"fileName": {
+				"value": "@{item().FileNameOrPattern}",
+				"type": "Expression"
+			},
+			"folderPath": {
+				"value": "New_file_copy",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

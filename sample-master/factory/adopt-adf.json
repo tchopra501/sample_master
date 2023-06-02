@@ -1,0 +1,15 @@
+{
+	"name": "adopt-adf",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned,UserAssigned",
+		"principalId": "87eb6268-8183-43ef-9149-a0a96234c52f",
+		"tenantId": "93f33571-550f-43cf-b09f-cd331338d086",
+		"userAssignedIdentities": {
+			"/subscriptions/cdb6defe-2488-4e5a-acf3-0cb17e78c07d/resourcegroups/adopt-demo/providers/Microsoft.ManagedIdentity/userAssignedIdentities/adopt_webapp": {
+				"clientId": "695bbd2c-acb6-4c9f-a3ab-ec1e91f6787b",
+				"principalId": "ec75e432-0d29-4d5c-a5ad-814c1db75c3e"
+			}
+		}
+	}
+}

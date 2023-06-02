@@ -1,0 +1,22 @@
+{
+	"name": "ds_file_src_2705",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_file_src_2705",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "FileShare",
+		"typeProperties": {
+			"fileName": {
+				"value": "@{item().FileNameOrPattern}",
+				"type": "Expression"
+			},
+			"folderPath": {
+				"value": "@{item().FolderPath}",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,6 @@
+{
+	"name": "adopt-integrationRuntime",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}

@@ -1,0 +1,89 @@
+{
+	"name": "file_adls_pipe",
+	"properties": {
+		"activities": [
+			{
+				"name": "Lookupmy",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlSource",
+						"sqlReaderQuery": "SELECT FolderPath, FileNameOrPattern FROM dbo.SourceFileList WHERE DataSourceId = 9",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "DS_SOAPAppDatabase",
+						"type": "DatasetReference"
+					},
+					"firstRowOnly": false
+				}
+			},
+			{
+				"name": "ForeachLookup",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "Lookupmy",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('Lookupmy').output.value",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "CopyFileFromLocalToAdls",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "FileSystemSource",
+									"recursive": true
+								},
+								"sink": {
+									"type": "AzureDataLakeStoreSink"
+								},
+								"enableStaging": false
+							},
+							"inputs": [
+								{
+									"referenceName": "ds_fileshare",
+									"type": "DatasetReference"
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "ds_adls",
+									"type": "DatasetReference"
+								}
+							]
+						}
+					]
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2022-05-19T06:58:31Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

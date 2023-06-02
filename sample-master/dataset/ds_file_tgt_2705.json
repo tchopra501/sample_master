@@ -1,0 +1,27 @@
+{
+	"name": "ds_file_tgt_2705",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_file_tgt_2705",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureDataLakeStoreFile",
+		"typeProperties": {
+			"format": {
+				"type": "TextFormat",
+				"columnDelimiter": ",",
+				"treatEmptyAsNull": true
+			},
+			"fileName": {
+				"value": "@{item().FileNameOrPattern}",
+				"type": "Expression"
+			},
+			"folderPath": {
+				"value": "file_trg_2705",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

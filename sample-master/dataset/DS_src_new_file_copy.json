@@ -1,0 +1,22 @@
+{
+	"name": "DS_src_new_file_copy",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_src_new_file_copy",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "FileShare",
+		"typeProperties": {
+			"fileName": {
+				"value": "@{item().FileNameOrPattern}",
+				"type": "Expression"
+			},
+			"folderPath": {
+				"value": "@{item().FolderPath}",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

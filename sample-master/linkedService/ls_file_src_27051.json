@@ -1,0 +1,17 @@
+{
+	"name": "ls_file_src_27051",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "FileServer",
+		"typeProperties": {
+			"host": "\\\\US-5CG0031M5V\\adopt",
+			"userId": "ead\\nkorrapati",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI3Y2U5MzIwZC1kOGQzLTRhMDYtYTQzYi00NGUwOWY0ODdjMDMiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "adopt-integrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

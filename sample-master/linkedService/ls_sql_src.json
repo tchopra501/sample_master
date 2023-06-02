@@ -1,0 +1,16 @@
+{
+	"name": "ls_sql_src",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=False;data source=rrsqlsvr.database.windows.net;initial catalog=adoptdemo;user id=svradmin",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI3ODg3Y2FkYi0wM2Y1LTRhZTktOTI1YS1lNmI0M2ViNGQ5MTQiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "adopt-integrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

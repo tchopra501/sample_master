@@ -1,0 +1,27 @@
+{
+	"name": "ds_adls_tgt",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_adls_tgt",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureDataLakeStoreFile",
+		"typeProperties": {
+			"format": {
+				"type": "TextFormat",
+				"columnDelimiter": ",",
+				"treatEmptyAsNull": true
+			},
+			"fileName": {
+				"value": "@{ item().tablename}",
+				"type": "Expression"
+			},
+			"folderPath": {
+				"value": "target",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
